@@ -1,3 +1,5 @@
+#ifndef GAMEOFLIFE_H
+#define GAMEOFLIFE_H
 
 // ----------------------------------------------------//
 // GameOfLife projektiin tarvittava .h header tiedosto //
@@ -25,8 +27,6 @@ class GameBoardClass
 
 };
 
-int GameBoardClass::BoardSize = 0;
-
 class MainApp: public wxApp, public GameBoardClass // MainApp on ohjelman luokka
     {
     // MainApp on paaikkunan container
@@ -42,14 +42,15 @@ class MainFrame: public wxFrame, public GameBoardClass // MainFrame on paaikkuna
 {
     // Sisaltyy paaikkunaan
     private:
-      bool StartSignal = false;            // Start napin signaali
-      bool NextStateSignal = false;        // NextStaten napin signaali
-      bool locked = false;                 // Kun = true, niin pelilautaa ei voi enää muokata
-      int interval = 500;                  // Automaattinen pelilaudan paivitysnonpeus millisekuntena
-      int totalsum = 0;                    // Solua ymparoivien mustien(alive) kavereiden maara
 
-      bool **clickCell_UI;
-      bool *clickControl_Button;
+      bool StartSignal;                    // Start napin signaali
+      bool NextStateSignal;                // NextStaten napin signaali
+      bool locked;                         // Kun = true, niin pelilautaa ei voi enaa muokata
+      int interval;                        // Automaattinen pelilaudan paivitysnonpeus millisekuntena
+      int totalsum;                        // Solua ymparoivien mustien(alive) kavereiden maara
+
+      bool **clickCell_UI;                 // Pelilaudan nappien klikkaukset
+      bool *clickControl_Button;           // Control nappien klikkaukset, Start ja Next.
 
       wxButton *Start;                     // Luodaan Start nappi
       wxButton *NextState;                 // Luodaan NextState nappi
@@ -59,6 +60,7 @@ class MainFrame: public wxFrame, public GameBoardClass // MainFrame on paaikkuna
       int **GameBoardStatesNext;           // Pelilaudan seuraava tila
 
       wxTimer *recTimer;                   // Tarvitaan pelilaudan automaattisessa paivityksessa
+      void FreeMemory();
 
     public:
 
@@ -66,7 +68,7 @@ class MainFrame: public wxFrame, public GameBoardClass // MainFrame on paaikkuna
       ~MainFrame() { FreeMemory(); };
 
       void ClickButtonEvent(wxCommandEvent& event );  // Klikataan pelilaudan soluja tai Start/NextState -nappija
-      void OnRecTimer(wxTimerEvent& event);    // Tarvitaan pelilaudan automaattisessa paivityksessa
+      void OnRecTimer(wxTimerEvent& event);           // Tarvitaan pelilaudan automaattisessa paivityksessa
       void CalcNextState();
       void UpdateUI();
 
@@ -77,8 +79,8 @@ class MainFrame: public wxFrame, public GameBoardClass // MainFrame on paaikkuna
       void CreateControlButtons();
       void CreateGameBoard_UI();
       void CreateGameBoardStates();
-      void FreeMemory();
 
       DECLARE_EVENT_TABLE()
 };
 
+#endif // GAMEOFLIFE_H

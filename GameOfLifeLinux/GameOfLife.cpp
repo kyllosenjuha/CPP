@@ -1,14 +1,8 @@
-
-// ------------------------------------------//
-// GameOfLife projektin paa ".cpp" -tiedosto //
-// ------------------------------------------//
-
+#include "GameOfLife.h"
 #define BUTTON_ID_START 6000
 #define CELLSIZE_PX 30
-#include "GameOfLife.h"
+#define MAX_BOARDSIZE 30
 
-
-IMPLEMENT_APP(MainApp)
 
 bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
 {
@@ -16,15 +10,7 @@ bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
     MainApp::wxCmdLineParser(argc, argv);  // Command line parametri (pelilaudan koko)
     MainFrame *MainWin;
 
-    try {
-
-    MainWin = new MainFrame(_T("Game of Life"), wxPoint(1, 1), wxSize((CELLSIZE_PX*GetBoardSize())+10, (CELLSIZE_PX*GetBoardSize())+85));
-
-    } catch (const std::runtime_error& err) {
-
-        wxMessageBox(err.what(), "Error occurred");
-        return false;
-    }
+    MainWin = new MainFrame(_T("Game of Life"), wxPoint(1, 1), wxSize((CELLSIZE_PX*GetBoardSize()+20), (CELLSIZE_PX*GetBoardSize()+95)));
 
     MainWin->Show(TRUE);   // Nauta window
     SetTopWindow(MainWin); // Asetetaan paaikkunaksi
@@ -32,9 +18,6 @@ bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
 }
 
 int MainApp::OnExit() {
-
-    bool exit_success = wxApp::GetExitOnFrameDelete();
-    std::cout << exit_success << ": Paaikkuna tuhottiin muistista.\n";
     return 0;
 }
 
@@ -50,6 +33,13 @@ MainFrame::MainFrame(const wxString &title, const wxPoint &pos, const wxSize
     &size): wxFrame((wxFrame*)NULL,  - 1, title, pos, size)
     {
 
+    StartSignal = false;            // Start napin signaali
+    NextStateSignal = false;        // NextStaten napin signaali
+    locked = false;                 // Kun = true, niin pelilautaa ei voi enää muokata
+    interval = 500;                  // Automaattinen pelilaudan paivitysnonpeus millisekuntena
+    totalsum = 0;                    // Solua ymparoivien mustien(alive) kavereiden maara
+
+
     // Luodaan pelilaudan automaattinen paivitys
 
     recTimer = new wxTimer(this, 8003);
@@ -63,7 +53,7 @@ MainFrame::MainFrame(const wxString &title, const wxPoint &pos, const wxSize
 
     CreateGameBoardStates();
 
-    // Kytketään napin painaisu event oikeisiin paikkoihin
+    // Kytketaan napin painaisu event oikeisiin paikkoihin
 
     Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(MainFrame::ClickButtonEvent));
     Centre();  // Kaynnistaan paaikkuna keskelle nayttoruutua
@@ -106,45 +96,15 @@ void MainFrame::OnRecTimer(wxTimerEvent& event) {
 
 void MainApp::wxCmdLineParser(int argc, char **argv)
 {
+    int n = 0; // <-- initialize your variables!
 
-    if(argc == 2) {  // Ohjelma tarvitsee vain yhden lisa-argumentin eli pelilaudan koko argv[1]
-                     // Varsinen ohjelma on ensimmainen argv[0] argumentti
+    n = atoi(argv[1]); // <-- [1] instead of [0]! and parse the string...
 
-        char* p;
-        long arg = std::strtol(argv[1], &p, 10); // argv[1] on aluksi string muotoa
-                                             // muutetaan se kokonaisluvuksi ja tulostaan konsoliin virhe tilanteissa
-
-        if (p == argv[1])
-        {
-            std::cout << "Et antanut yhta kokonaislukuargumenttia valilta 5...35.\n";
-            Exit();
-
-        } else if (*p != 0)
-            {
-            std::cout << "Virheellinen argumentti.\n";
-            Exit();  // Jos tuli virhe niin suljetaan ohjelma
-
-            } else
-                {
-                SetBoardSize((int)arg);
-                }
-    } else
-        {
-            std::cout << "Anna vain yksi kokonaislukuargumentti (Pelilaudan koko).\n";
+    if(n >= 5 && n <= MAX_BOARDSIZE && argc == 2) {
+        SetBoardSize(n);
+        } else {
             Exit();
         }
-
-    if(GetBoardSize() < 5 || GetBoardSize() > 35) {
-        std::cout << "Argumentin koko taytyy olla: 5...35 kokoinen.\n";
-        Exit();
-    }
-
-    for(int i=0; i<argc; i++) {
-        std::cout << "argv[" << i << "] = " << argv[i] << "\n";
-    }
-
-        std::cout << "BoardSize[1]: " << GetBoardSize() << "\n";
-
 }
 
 // Lasketaan seuraava tila
@@ -434,7 +394,4 @@ void MainFrame::FreeMemory() {
     delete NextState;
     delete Reset;
     delete recTimer;
-
-    std::cout << "Dynaamiset muistinvaraukset tuhottiin onnistuneesti.\n";
-
 }
