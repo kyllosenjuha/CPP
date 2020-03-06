@@ -1,10 +1,6 @@
 #ifndef MAINFRAME_H
 #define MAINFRAME_H
 
-// ----------------------------------------------------//
-// GameOfLife projektiin tarvittava .h header tiedosto //
-// ----------------------------------------------------//
-
 #include <wx/wx.h>
 
 class MainFrame: public wxFrame, public GameBoardSize // MainFrame on paaikkunan luokka
