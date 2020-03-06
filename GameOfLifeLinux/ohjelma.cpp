@@ -5,7 +5,8 @@
 
 #include "GameOfLife.h"
 
+int GameBoardClass::BoardSize = 0;
 
 IMPLEMENT_APP(MainApp)
 
-int GameBoardClass::BoardSize = 0;
+
