@@ -8,8 +8,6 @@ class GameBoardSize
         GameBoardSize();
         virtual ~GameBoardSize();
 
-    public:
-
         int GetBoardSize()
         {
             return BoardSize;
@@ -19,6 +17,11 @@ class GameBoardSize
         {
             BoardSize = newVal;
         }
+
+    protected:
+        const int BUTTON_ID_START = 6000;
+        const int CELLSIZE_PX = 30;
+        const int MAX_BOARDSIZE = 30;
 
     private:
 

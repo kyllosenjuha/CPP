@@ -1,8 +1,5 @@
 #include "GameBoardSize.h"
 #include "MainFrame.h"
-#define BUTTON_ID_START 6000
-#define CELLSIZE_PX 30
-#define MAX_BOARDSIZE 30
 
 // Luodaan paaikkuna, Start-, NextState ja Reset -napit ja tehdaan alkualustukset
 
