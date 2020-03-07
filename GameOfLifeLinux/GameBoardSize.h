@@ -8,6 +8,8 @@ class GameBoardSize
         GameBoardSize();
         virtual ~GameBoardSize();
 
+
+
         int GetBoardSize()
         {
             return BoardSize;
@@ -22,7 +24,7 @@ class GameBoardSize
         const int BUTTON_ID_START = 6000;
         const int CELLSIZE_PX = 30;
         const int BUTTONSIZE_PX = 50;
-        const int TITLEBAR_HEIGHT_PX = wxSYS_CAPTION_Y;
+        const int TITLEBAR_HEIGHT_PX = 32;
         const int MAX_BOARDSIZE = 30;
 
     private:

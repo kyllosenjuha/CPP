@@ -16,8 +16,6 @@ MainApp::~MainApp()
 bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
 {
 
-
-
     MainApp::wxCmdLineParser(argc, argv);  // Command line parametri (pelilaudan koko)
     MainFrame *MainWin;
 
