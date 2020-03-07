@@ -14,7 +14,6 @@ class MainApp: public wxApp, public GameBoardSize // MainApp on ohjelman luokka
       virtual bool OnInit();
       virtual int OnExit();
       virtual void wxCmdLineParser(int argc, char **argv); // Command line argumenttien poiminta talteen asetuksiksi
-
     };
 
 #endif // MAINAPP_H

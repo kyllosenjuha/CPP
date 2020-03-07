@@ -1,10 +1,11 @@
 #include "GameBoardSize.h"
 #include "MainApp.h"
 #include "MainFrame.h"
+//#include <wx/wx.h>
 
 MainApp::MainApp()
 {
-    //ctor
+     //ctor
 }
 
 MainApp::~MainApp()
@@ -15,11 +16,15 @@ MainApp::~MainApp()
 bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
 {
 
+
+
     MainApp::wxCmdLineParser(argc, argv);  // Command line parametri (pelilaudan koko)
     MainFrame *MainWin;
 
-    MainWin = new MainFrame(_T("Game of Life"), wxPoint(1, 1), wxSize((CELLSIZE_PX*GetBoardSize()), (CELLSIZE_PX*GetBoardSize())));
-    MainWin->Fit();
+
+    MainWin = new MainFrame(_T("Game of Life"), wxPoint(0, 0), wxSize((CELLSIZE_PX*GetBoardSize()),
+            (CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+TITLEBAR_SIZE_PX)));
+
     MainWin->Show(TRUE);   // Nauta window
     SetTopWindow(MainWin); // Asetetaan paaikkunaksi
     return TRUE;

@@ -21,6 +21,8 @@ class GameBoardSize
     protected:
         const int BUTTON_ID_START = 6000;
         const int CELLSIZE_PX = 30;
+        const int BUTTONSIZE_PX = 50;
+        const int TITLEBAR_SIZE_PX = 30;
         const int MAX_BOARDSIZE = 30;
 
     private:
