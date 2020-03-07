@@ -1,6 +1,6 @@
 #ifndef GAMEBOARDSIZE_H
 #define GAMEBOARDSIZE_H
-
+#include <wx/wx.h>
 
 class GameBoardSize
 {
@@ -19,12 +19,12 @@ class GameBoardSize
         }
 
     protected:
+		wxTopLevelWindow* win = NULL;
         const int BUTTON_ID_START = 6000;
         const int CELLSIZE_PX = 30;
 		const int BUTTONSIZE_PX = 50;
-		const int TITLEBAR_SIZE_PX = 30;
         const int MAX_BOARDSIZE = 30;
-
+		
     private:
 
         static int BoardSize;

@@ -9,7 +9,7 @@ MainApp::MainApp()
 
 MainApp::~MainApp()
 {
-    //dtor
+	//dtor
 }
 
 bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
@@ -19,8 +19,13 @@ bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
     MainFrame *MainWin;
 
     MainWin = new MainFrame(_T("Game of Life"), wxPoint(0, 0), wxSize((CELLSIZE_PX*GetBoardSize()+20), 
-		(CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+TITLEBAR_SIZE_PX+10)));
+		(CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, win)+20)));
 	
+	MainWin->SetMinSize(wxSize((CELLSIZE_PX*GetBoardSize() + 20),
+		(CELLSIZE_PX*GetBoardSize() + BUTTONSIZE_PX + wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, win) + 20)));
+		
+	MainWin->Fit();
+
     MainWin->Show(TRUE);   // Nauta window
     SetTopWindow(MainWin); // Asetetaan paaikkunaksi
     return TRUE;
