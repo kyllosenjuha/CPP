@@ -22,8 +22,8 @@ bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
     MainFrame *MainWin;
 
 
-    MainWin = new MainFrame(_T("Game of Life"), wxPoint(0, 0), wxSize((CELLSIZE_PX*GetBoardSize()),
-            (CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+TITLEBAR_SIZE_PX)));
+    MainWin = new MainFrame(_T("Game of Life"), wxPoint(0, 0), wxSize((CELLSIZE_PX*GetBoardSize()+5),
+            (CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+TITLEBAR_SIZE_PX+5)));
 
     MainWin->Show(TRUE);   // Nauta window
     SetTopWindow(MainWin); // Asetetaan paaikkunaksi
