@@ -4,7 +4,7 @@
 // Luodaan paaikkuna, Start-, NextState ja Reset -napit ja tehdaan alkualustukset
 
 MainFrame::MainFrame(const wxString &title, const wxPoint &pos, const wxSize
-    &size): wxFrame((wxFrame*)NULL,  - 1, title, pos, size)
+    &size): wxFrame((wxFrame*)NULL, -1, title, pos, size)
     {
 
     StartSignal = false;            // Start napin signaali
@@ -254,6 +254,8 @@ void MainFrame::CreateControlButtons() {
     clickControl_Button = new bool[2];
     clickControl_Button[0] = false;
     clickControl_Button[1] = false;
+
+
 }
 
 void MainFrame::CreateGameBoard_UI() {
