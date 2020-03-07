@@ -18,8 +18,8 @@ bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
     MainApp::wxCmdLineParser(argc, argv);  // Command line parametri (pelilaudan koko)
     MainFrame *MainWin;
 
-    MainWin = new MainFrame(_T("Game of Life"), wxPoint(1, 1), wxSize((CELLSIZE_PX*GetBoardSize()+20), (CELLSIZE_PX*GetBoardSize()+95)));
-
+    MainWin = new MainFrame(_T("Game of Life"), wxPoint(1, 1), wxSize((CELLSIZE_PX*GetBoardSize()), (CELLSIZE_PX*GetBoardSize())));
+	MainWin->Fit();
     MainWin->Show(TRUE);   // Nauta window
     SetTopWindow(MainWin); // Asetetaan paaikkunaksi
     return TRUE;
