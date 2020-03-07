@@ -228,7 +228,7 @@ void MainFrame::CreateControlButtons() {
     // Luodaan Start nappi ja maaritetaan alkuasetukset.
 
     Start = new wxButton(this, 8000, _T("Start"),
-            wxPoint(0 , 0), wxSize(50, 50), 0);
+            wxPoint(0 , 0), wxSize(BUTTONSIZE_PX, BUTTONSIZE_PX), 0);
 
     Start->SetBackgroundColour(*wxRED);
     Start->SetForegroundColour(*wxBLACK);
@@ -236,7 +236,7 @@ void MainFrame::CreateControlButtons() {
     // Luodaan NextState nappi ja maaritetaan alkuasetukset.
 
     NextState = new wxButton(this, 8001, _T("Next"),
-            wxPoint(50, 0), wxSize(50, 50), 0);
+            wxPoint(BUTTONSIZE_PX, 0), wxSize(BUTTONSIZE_PX, BUTTONSIZE_PX), 0);
 
     NextState->SetBackgroundColour(*wxRED);
     NextState->SetForegroundColour(*wxBLACK);
@@ -244,7 +244,7 @@ void MainFrame::CreateControlButtons() {
     // Luodaan Reset nappi ja maaritetaan alkuasetukset.
 
     Reset = new wxButton(this, 8002, _T("Reset"),
-            wxPoint(100 , 0), wxSize(50, 50), 0);
+            wxPoint(BUTTONSIZE_PX*2, 0), wxSize(BUTTONSIZE_PX, BUTTONSIZE_PX), 0);
 
     Reset->SetBackgroundColour(*wxGREEN);
     Reset->SetForegroundColour(*wxBLACK);
@@ -271,7 +271,7 @@ void MainFrame::CreateGameBoard_UI() {
     for(int i=0; i<GetBoardSize(); i++) {
         for(int j=0; j<GetBoardSize(); j++) {
         GameBoard_UI[i][j].Create(this, BUTTON_ID_START+i*(GetBoardSize())+j , _T(""),
-        wxPoint(j*CELLSIZE_PX, i*CELLSIZE_PX+50), wxSize(CELLSIZE_PX, CELLSIZE_PX), 0);
+        wxPoint(j*CELLSIZE_PX, i*CELLSIZE_PX+BUTTONSIZE_PX), wxSize(CELLSIZE_PX, CELLSIZE_PX), 0);
         }
     }
 
