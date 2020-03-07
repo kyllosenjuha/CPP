@@ -23,10 +23,10 @@ bool MainApp::OnInit()                     // Luodaan pelilauta ikkuna
 
 
     MainWin = new MainFrame(_T("Game of Life"), wxPoint(0, 0), wxSize((CELLSIZE_PX*GetBoardSize()),
-            (CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+TITLEBAR_SIZE_PX)));
+            (CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+TITLEBAR_HEIGHT_PX)));
 
     MainWin->SetMinSize(wxSize((CELLSIZE_PX*GetBoardSize()+2),
-            (CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+TITLEBAR_SIZE_PX+1)));
+            (CELLSIZE_PX*GetBoardSize()+BUTTONSIZE_PX+TITLEBAR_HEIGHT_PX)));
 
     MainWin->Fit();
     MainWin->Show(TRUE);   // Nauta window
