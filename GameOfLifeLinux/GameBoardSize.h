@@ -29,5 +29,4 @@ class GameBoardSize
 
 };
 
-
 #endif // GAMEBOARDSIZE_H
