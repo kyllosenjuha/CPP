@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1615144143 source:/home/pi/Beginning_CPP17/Chapter_07/Exercise_7-3/main.cpp
+	<regex>
+	<iostream>
+	<string>
+	<cctype>
+	<algorithm>
+

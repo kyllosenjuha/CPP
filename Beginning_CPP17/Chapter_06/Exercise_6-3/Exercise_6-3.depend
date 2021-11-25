@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1615022160 source:/home/pi/Beginning_CPP17/Chapter_06/Exercise_6-3/main.cpp
+	<iostream>
+	<cmath>
+

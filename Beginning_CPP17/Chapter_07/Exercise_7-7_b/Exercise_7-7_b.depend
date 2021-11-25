@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1615181485 source:/home/pi/Beginning_CPP17/Chapter_07/Exercise_7-7_b/main.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<vector>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1615031661 source:/home/pi/Beginning_CPP17/Chapter_06/Exercise_6-4/main.cpp
+	<iostream>
+	<vector>
+	<exception>
+	<cmath>
+	<iomanip>
+
