@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1615294026 source:/home/pi/Beginning_CPP17/Chapter_08/Exercise_8-1/main.cpp
+	<iostream>
+	<string>
+
