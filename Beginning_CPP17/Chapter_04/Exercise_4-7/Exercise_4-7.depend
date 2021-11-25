@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1613910540 source:/home/pi/Beginning_CPP17/Chapter_04/Exercise_4-7/main.cpp
+	<iostream>
+	<cctype>
+	<bitset>
+
