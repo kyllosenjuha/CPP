@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1616404366 source:/home/pi/Beginning_CPP17/Chapter_10/Exercise_10-1/main.cpp
+	<iostream>
+	<string_view>
+	"print.h"
+	"print_this.h"
+	"print_that.h"
+
+1616405012 /home/pi/Beginning_CPP17/Chapter_10/Exercise_10-1/include/print_this.h
+	<string_view>
+
+1616405012 /home/pi/Beginning_CPP17/Chapter_10/Exercise_10-1/include/print.h
+	<string_view>
+
+1616405011 source:/home/pi/Beginning_CPP17/Chapter_10/Exercise_10-1/src/print_this.cpp
+	"print_this.h"
+	"print.h"
+	<iostream>
+
+1616405011 source:/home/pi/Beginning_CPP17/Chapter_10/Exercise_10-1/src/print.cpp
+	"print.h"
+	"print_this.h"
+	"print_that.h"
+	<iostream>
+
+1616405011 source:/home/pi/Beginning_CPP17/Chapter_10/Exercise_10-1/src/print_that.cpp
+	"print_that.h"
+	"print.h"
+
+1616405011 /home/pi/Beginning_CPP17/Chapter_10/Exercise_10-1/include/print_that.h
+	<string_view>
+
