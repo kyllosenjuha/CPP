@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1618130203 source:/home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<vector>
+	"Zoo.h"
+	"Animal.h"
+	"Sheep.h"
+	"Dog.h"
+	"Cow.h"
+
+1637407780 source:/home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/src/Animal.cpp
+	"Animal.h"
+	<string>
+
+1637405510 /home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/include/Animal.h
+	<iostream>
+
+1637408310 /home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/include/Sheep.h
+	<iostream>
+	"Animal.h"
+
+1637407210 /home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/include/Dog.h
+	<iostream>
+	"Animal.h"
+
+1637407210 /home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/include/Cow.h
+	<iostream>
+	"Animal.h"
+
+1637405097 source:/home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/src/Cow.cpp
+	"Cow.h"
+
+1618031807 source:/home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/src/Dog.cpp
+	"Dog.h"
+
+1637407297 source:/home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/src/Sheep.cpp
+	"Sheep.h"
+
+1637405793 source:/home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/src/Zoo.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<vector>
+	"Zoo.h"
+
+1637408830 /home/pi/Beginning_CPP17/Chapter_14/Exercise_14-1/include/Zoo.h
+	<boost/core/demangle.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<typeinfo>
+	"Animal.h"
+	"Sheep.h"
+	"Dog.h"
+	"Cow.h"
+
