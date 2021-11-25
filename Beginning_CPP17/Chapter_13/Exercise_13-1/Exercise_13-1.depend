@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1617852892 source:/home/pi/Beginning_CPP17/Chapter_13/Exercise_13-1/src/Animal.cpp
+	"Animal.h"
+	<iostream>
+
+1617854006 /home/pi/Beginning_CPP17/Chapter_13/Exercise_13-1/include/Animal.h
+	<iostream>
+
+1617854049 source:/home/pi/Beginning_CPP17/Chapter_13/Exercise_13-1/main.cpp
+	<iostream>
+	"Animal.h"
+	"Lion.h"
+	"Aardvark.h"
+
+1617854006 /home/pi/Beginning_CPP17/Chapter_13/Exercise_13-1/include/Lion.h
+	<iostream>
+	"Animal.h"
+
+1617854081 /home/pi/Beginning_CPP17/Chapter_13/Exercise_13-1/include/Aardvark.h
+	<iostream>
+	"Animal.h"
+
+1617852326 source:/home/pi/Beginning_CPP17/Chapter_13/Exercise_13-1/src/Aardvark.cpp
+	"Aardvark.h"
+
+1617852299 source:/home/pi/Beginning_CPP17/Chapter_13/Exercise_13-1/src/Lion.cpp
+	"Lion.h"
+

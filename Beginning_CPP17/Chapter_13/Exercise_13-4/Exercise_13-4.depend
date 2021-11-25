@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1617858887 source:/home/pi/Beginning_CPP17/Chapter_13/Exercise_13-4/main.cpp
+	<iostream>
+	"Person.h"
+	"Employee.h"
+	"Executive.h"
+	<iostream>
+	<vector>
+
+1617855889 /home/pi/Beginning_CPP17/Chapter_13/Exercise_13-4/include/Person.h
+	<iostream>
+
+1617855985 /home/pi/Beginning_CPP17/Chapter_13/Exercise_13-4/include/Employee.h
+	"Person.h"
+
+1617857842 /home/pi/Beginning_CPP17/Chapter_13/Exercise_13-4/include/Executive.h
+	"Employee.h"
+
+1617855079 source:/home/pi/Beginning_CPP17/Chapter_13/Exercise_13-4/src/Person.cpp
+	"Person.h"
+
+1617859012 source:/home/pi/Beginning_CPP17/Chapter_13/Exercise_13-4/src/Employee.cpp
+	"Employee.h"
+
+1617856653 source:/home/pi/Beginning_CPP17/Chapter_13/Exercise_13-4/src/Executive.cpp
+	"Executive.h"
+

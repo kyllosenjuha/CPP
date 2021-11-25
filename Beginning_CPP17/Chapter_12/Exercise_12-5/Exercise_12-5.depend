@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1617528517 source:/home/pi/Beginning_CPP17/Chapter_12/Exercise_12-5/main.cpp
+	<iostream>
+	"Rational.h"
+
+1617528683 /home/pi/Beginning_CPP17/Chapter_12/Exercise_12-5/include/Rational.h
+	<iostream>
+
+1617527803 source:/home/pi/Beginning_CPP17/Chapter_12/Exercise_12-5/src/Rational.cpp
+	"Rational.h"
+
