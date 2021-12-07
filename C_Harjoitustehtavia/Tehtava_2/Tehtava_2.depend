@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1638781598 source:/home/pi/C_Harjoitustehtavia/Tehtava_2/main.c
+	<stdio.h>
+	<stdlib.h>
+
