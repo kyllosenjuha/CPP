@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1638886443 source:/home/pi/C_Harjoitustehtavia/Tehtava_14/main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+
